@@ -1,3 +1,15 @@
+/* Remove any default margins/padding that could cause white space */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
 /* Fix Framer Color Variables - Correct Light/Dark Mode Colors */
 :root {
   --unframer-white: rgb(255, 255, 255) !important;
@@ -15,16 +27,25 @@
 
 /* Enable Framer's True Responsive Scaling */
 
+#root {
+  width: 100vw !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
 .app-container {
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 /* Override Framer's fixed dimensions to enable full fluid scaling */
