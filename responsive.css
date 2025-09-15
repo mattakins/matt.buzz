@@ -1,3 +1,18 @@
+/* Fix Framer Color Variables - Correct Light/Dark Mode Colors */
+:root {
+  --unframer-white: rgb(255, 255, 255) !important;
+  --unframer-black: rgb(0, 0, 0) !important;
+  --token-5fde730a-8086-4528-a317-d71b3bf4efde: rgb(0, 0, 0) !important;
+  --token-62d5ebd4-5867-40fc-ba4d-ed46a167a079: rgb(255, 255, 255) !important;
+}
+
+.dark {
+  --unframer-white: rgb(0, 0, 0) !important;
+  --unframer-black: rgb(255, 255, 255) !important;
+  --token-5fde730a-8086-4528-a317-d71b3bf4efde: rgb(255, 255, 255) !important;
+  --token-62d5ebd4-5867-40fc-ba4d-ed46a167a079: rgb(0, 0, 0) !important;
+}
+
 /* Enable Framer's True Responsive Scaling */
 
 .app-container {
