@@ -1,0 +1,128 @@
+/* Enhanced Responsive Styles */
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Smooth transitions for all responsive changes */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Enhanced viewport handling */
+@media screen and (max-width: 479px) {
+  /* Extra small phones */
+  .app-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  /* Small phones */
+  .app-container {
+    padding: 0 8px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 767px) {
+  /* Large phones / Small tablets */
+  .app-container {
+    padding: 0 16px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Tablets / Small laptops */
+  .app-container {
+    padding: 0 24px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  /* Laptops */
+  .app-container {
+    padding: 0 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  /* Desktop and larger */
+  .app-container {
+    padding: 0 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+/* Dynamic viewport units for better mobile support */
+@supports (height: 100dvh) {
+  .app-container {
+    min-height: 100dvh;
+  }
+}
+
+/* Smooth scaling for text and elements */
+@media (prefers-reduced-motion: no-preference) {
+  .app-container * {
+    transition: transform 0.2s ease, opacity 0.2s ease, font-size 0.2s ease;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Orientation change handling */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .app-container {
+    min-height: 100vh;
+  }
+}
+
+/* Container queries for more granular control */
+@container (min-width: 320px) {
+  .app-container {
+    container-type: inline-size;
+  }
+}
+
+/* Focus and interaction improvements */
+@media (hover: hover) and (pointer: fine) {
+  /* Desktop/laptop with precise pointer */
+  .app-container button,
+  .app-container a {
+    transition: all 0.2s ease;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  /* Touch devices */
+  .app-container button,
+  .app-container a {
+    min-height: 44px; /* iOS recommended touch target */
+    min-width: 44px;
+  }
+}
