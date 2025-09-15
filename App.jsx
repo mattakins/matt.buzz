@@ -8,16 +8,8 @@ import MainFramerComponent from './framer/main.jsx';
 export default function App() {
   return (
     <div className="app-container">
-      {/* Main page with nav and header - full viewport dynamic sizing */}
-      <MainFramerComponent.Responsive
-        style={{
-          width: '100%',
-          height: '100%',
-          maxWidth: 'none',
-          minWidth: '100%'
-        }}
-        className="full-viewport"
-      />
+      {/* Main page with nav and header - gentle responsive scaling */}
+      <MainFramerComponent.Responsive />
     </div>
   );
 }
