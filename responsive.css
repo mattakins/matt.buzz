@@ -1,31 +1,44 @@
-/* Enhanced Responsive Styles - Optimized for Framer Components */
+/* Dynamic Full-Viewport Layout */
 
 .app-container {
-  width: 100%;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
 }
 
-/* Let Framer handle most transitions, only enhance specific properties */
-.app-container {
-  transition: padding 0.2s ease, max-width 0.2s ease;
+/* Force Framer components to fill the viewport dynamically */
+.app-container > * {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  flex: 1;
 }
 
-/* Minimal container adjustments - let Framer handle the main responsive logic */
-@media screen and (max-width: 768px) {
-  .app-container {
-    padding: 0;
-  }
+/* Override Framer's fixed dimensions */
+.app-container [data-framer-name] {
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  min-width: 100% !important;
 }
 
-@media screen and (min-width: 769px) {
-  .app-container {
-    padding: 0 20px;
-  }
+/* Ensure main container scales properly */
+.app-container main {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  min-width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 /* Dynamic viewport units for better mobile support */
