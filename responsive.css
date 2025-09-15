@@ -1,4 +1,4 @@
-/* Gentle Responsive Layout - Work with Framer, not against it */
+/* Enable Framer's True Responsive Scaling */
 
 .app-container {
   width: 100%;
@@ -12,10 +12,35 @@
   margin: 0;
 }
 
-/* Allow components to scale naturally while keeping aspect ratios */
-.app-container > * {
-  width: 100%;
-  max-width: 100vw;
+/* Override Framer's fixed widths to enable fluid scaling */
+.framer-71xho.framer-k6grlf {
+  width: 100% !important;
+  max-width: 100vw !important;
+  min-width: 100% !important;
+}
+
+/* Desktop variant - make it fluid */
+.framer-71xho.framer-v-k6grlf {
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
+/* Laptop variant - make it fluid */
+.framer-71xho.framer-v-8jtlao.framer-k6grlf {
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
+/* Tablet variant - make it fluid */
+.framer-71xho.framer-v-wk99yq.framer-k6grlf {
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
+/* Phone variant - make it fluid */
+.framer-71xho.framer-v-1dyr4d3.framer-k6grlf {
+  width: 100% !important;
+  max-width: 100vw !important;
 }
 
 /* Responsive scaling without breaking Framer's layout */
