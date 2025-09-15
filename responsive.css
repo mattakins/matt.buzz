@@ -1,75 +1,30 @@
-/* Enhanced Responsive Styles */
+/* Enhanced Responsive Styles - Optimized for Framer Components */
 
 .app-container {
   width: 100%;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Smooth transitions for all responsive changes */
-* {
-  transition: all 0.3s ease-in-out;
+/* Let Framer handle most transitions, only enhance specific properties */
+.app-container {
+  transition: padding 0.2s ease, max-width 0.2s ease;
 }
 
-/* Enhanced viewport handling */
-@media screen and (max-width: 479px) {
-  /* Extra small phones */
+/* Minimal container adjustments - let Framer handle the main responsive logic */
+@media screen and (max-width: 768px) {
   .app-container {
     padding: 0;
-    margin: 0;
-  }
-
-  body {
-    font-size: 14px;
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 639px) {
-  /* Small phones */
+@media screen and (min-width: 769px) {
   .app-container {
-    padding: 0 8px;
-  }
-
-  body {
-    font-size: 15px;
-  }
-}
-
-@media screen and (min-width: 640px) and (max-width: 767px) {
-  /* Large phones / Small tablets */
-  .app-container {
-    padding: 0 16px;
-  }
-
-  body {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  /* Tablets / Small laptops */
-  .app-container {
-    padding: 0 24px;
-    max-width: 100%;
-  }
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
-  /* Laptops */
-  .app-container {
-    padding: 0 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  /* Desktop and larger */
-  .app-container {
-    padding: 0 40px;
-    max-width: 1440px;
-    margin: 0 auto;
+    padding: 0 20px;
   }
 }
 
@@ -80,12 +35,7 @@
   }
 }
 
-/* Smooth scaling for text and elements */
-@media (prefers-reduced-motion: no-preference) {
-  .app-container * {
-    transition: transform 0.2s ease, opacity 0.2s ease, font-size 0.2s ease;
-  }
-}
+/* Let Framer handle element transitions */
 
 /* High DPI display optimizations */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
