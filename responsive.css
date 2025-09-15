@@ -12,35 +12,46 @@
   margin: 0;
 }
 
-/* Override Framer's fixed widths to enable fluid scaling */
+/* Override Framer's fixed dimensions to enable full fluid scaling */
 .framer-71xho.framer-k6grlf {
   width: 100% !important;
+  height: 100vh !important;
   max-width: 100vw !important;
+  max-height: 100vh !important;
   min-width: 100% !important;
+  min-height: 100vh !important;
 }
 
 /* Desktop variant - make it fluid */
 .framer-71xho.framer-v-k6grlf {
   width: 100% !important;
+  height: 100vh !important;
   max-width: 100vw !important;
+  max-height: 100vh !important;
 }
 
 /* Laptop variant - make it fluid */
 .framer-71xho.framer-v-8jtlao.framer-k6grlf {
   width: 100% !important;
+  height: 100vh !important;
   max-width: 100vw !important;
+  max-height: 100vh !important;
 }
 
 /* Tablet variant - make it fluid */
 .framer-71xho.framer-v-wk99yq.framer-k6grlf {
   width: 100% !important;
+  height: 100vh !important;
   max-width: 100vw !important;
+  max-height: 100vh !important;
 }
 
 /* Phone variant - make it fluid */
 .framer-71xho.framer-v-1dyr4d3.framer-k6grlf {
   width: 100% !important;
+  height: 100vh !important;
   max-width: 100vw !important;
+  max-height: 100vh !important;
 }
 
 /* Responsive scaling without breaking Framer's layout */
