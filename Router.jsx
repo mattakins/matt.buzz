@@ -95,8 +95,13 @@ function NavigationWrapper({ children }) {
 }
 
 export default function Router() {
+  // Handle GitHub Pages routing
+  const basename = process.env.NODE_ENV === 'production'
+    ? '/matt.buzz'
+    : '';
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <NavigationWrapper>
         <Routes>
           <Route path="/" element={<MainFramerComponent.Responsive />} />
