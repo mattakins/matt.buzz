@@ -8,6 +8,12 @@ html, body {
   padding: 0 !important;
   width: 100vw !important;
   overflow-x: hidden !important;
+  font-family: 'Open Sauce Sans', 'Open Sauce One', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* Override all Framer fonts with Open Sauce Sans */
+* {
+  font-family: 'Open Sauce Sans', 'Open Sauce One', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
 }
 
 /* Fix Framer Color Variables - Correct Light/Dark Mode Colors */
@@ -23,6 +29,67 @@ html, body {
   --unframer-black: rgb(255, 255, 255) !important;
   --token-5fde730a-8086-4528-a317-d71b3bf4efde: rgb(255, 255, 255) !important;
   --token-62d5ebd4-5867-40fc-ba4d-ed46a167a079: rgb(0, 0, 0) !important;
+}
+
+/* Fix dark mode by ensuring Framer components can detect dark mode */
+.dark {
+  --unframer-white: rgb(0, 0, 0) !important;
+  --unframer-black: rgb(255, 255, 255) !important;
+  --token-5fde730a-8086-4528-a317-d71b3bf4efde: rgb(255, 255, 255) !important;
+  --token-62d5ebd4-5867-40fc-ba4d-ed46a167a079: rgb(0, 0, 0) !important;
+}
+
+/* Navigation visibility fixes - remove problematic mix-blend-mode */
+.framer-1qwpwn6-container {
+  mix-blend-mode: normal !important;
+}
+
+/* Direct nav text color fixes based on toggle-theme attribute */
+[toggle-theme="light"] nav p,
+[toggle-theme="light"] nav *,
+[toggle-theme="light"] navigation p,
+[toggle-theme="light"] navigation * {
+  color: rgb(0, 0, 0) !important;
+}
+
+[toggle-theme="dark"] nav p,
+[toggle-theme="dark"] nav *,
+[toggle-theme="dark"] navigation p,
+[toggle-theme="dark"] navigation * {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Default navigation styling for light mode */
+body:not(.dark) navigation,
+body:not(.dark) navigation *,
+body:not(.dark) nav,
+body:not(.dark) nav * {
+  color: rgb(0, 0, 0) !important;
+}
+
+/* Dark mode navigation styling */
+body.dark navigation,
+body.dark navigation *,
+body.dark nav,
+body.dark nav * {
+  color: rgb(255, 255, 255) !important;
+}
+
+
+
+
+/* Noise overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.10;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cdefs%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
 }
 
 /* Enable Framer's True Responsive Scaling */
@@ -48,65 +115,46 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Override Framer's fixed dimensions to enable full fluid scaling */
-.framer-71xho.framer-k6grlf {
-  width: 100% !important;
+/* Override ALL Framer width constraints - force absolute viewport width */
+.framer-71xho.framer-k6grlf,
+.framer-71xho.framer-v-k6grlf,
+.framer-71xho.framer-v-8jtlao.framer-k6grlf,
+.framer-71xho.framer-v-wk99yq.framer-k6grlf,
+.framer-71xho.framer-v-1dyr4d3.framer-k6grlf,
+.framer-71xho {
+  width: 100vw !important;
   height: 100vh !important;
-  max-width: 100vw !important;
-  max-height: 100vh !important;
-  min-width: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  min-width: 100vw !important;
   min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  position: relative !important;
 }
 
-/* Desktop variant - make it fluid */
-.framer-71xho.framer-v-k6grlf {
-  width: 100% !important;
-  height: 100vh !important;
-  max-width: 100vw !important;
-  max-height: 100vh !important;
+/* Force all child containers to use full width */
+.framer-71xho * {
+  max-width: none !important;
 }
 
-/* Laptop variant - make it fluid */
-.framer-71xho.framer-v-8jtlao.framer-k6grlf {
-  width: 100% !important;
-  height: 100vh !important;
-  max-width: 100vw !important;
-  max-height: 100vh !important;
-}
-
-/* Tablet variant - make it fluid */
-.framer-71xho.framer-v-wk99yq.framer-k6grlf {
-  width: 100% !important;
-  height: 100vh !important;
-  max-width: 100vw !important;
-  max-height: 100vh !important;
-}
-
-/* Phone variant - make it fluid */
-.framer-71xho.framer-v-1dyr4d3.framer-k6grlf {
-  width: 100% !important;
-  height: 100vh !important;
-  max-width: 100vw !important;
-  max-height: 100vh !important;
-}
-
-/* Responsive scaling without breaking Framer's layout */
-@media screen and (max-width: 390px) {
-  .app-container {
-    padding: 0;
+/* Override any responsive media query constraints */
+@media screen and (min-width: 1px) {
+  .framer-71xho.framer-k6grlf {
+    width: 100vw !important;
+    max-width: none !important;
   }
 }
 
-@media screen and (min-width: 391px) and (max-width: 768px) {
+/* Remove all responsive padding - use full viewport edge-to-edge */
+@media screen {
   .app-container {
-    padding: 0 16px;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .app-container {
-    padding: 0 32px;
-    max-width: none;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    max-width: none !important;
   }
 }
 
@@ -141,6 +189,35 @@ html, body {
   }
 }
 
+/* View Transitions API for smooth page navigation */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* Focus and interaction improvements */
 @media (hover: hover) and (pointer: fine) {
   /* Desktop/laptop with precise pointer */
@@ -157,4 +234,40 @@ html, body {
     min-height: 44px; /* iOS recommended touch target */
     min-width: 44px;
   }
+}
+
+/* Theme toggle visibility fixes - ensure contrast in both light and dark modes */
+.framer-7fJUK {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  border-radius: 14px !important;
+}
+
+/* Light mode theme toggle - dark border/background for visibility */
+body:not(.dark) .framer-7fJUK,
+[toggle-theme="light"] .framer-7fJUK {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Dark mode theme toggle - light border/background for visibility */
+body.dark .framer-7fJUK,
+[toggle-theme="dark"] .framer-7fJUK {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Theme toggle inner elements visibility */
+.framer-7fJUK .framer-1oohzqz {
+  background: currentColor !important;
+  opacity: 0.8 !important;
+}
+
+/* Ensure theme toggle dot is visible in both modes */
+body:not(.dark) .framer-7fJUK .framer-1oohzqz {
+  background: rgb(0, 0, 0) !important;
+}
+
+body.dark .framer-7fJUK .framer-1oohzqz {
+  background: rgb(255, 255, 255) !important;
 }
