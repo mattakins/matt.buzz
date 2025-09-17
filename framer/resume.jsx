@@ -22,7 +22,7 @@
 }} Props
 
  */
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:resume
 import { Fragment } from "react";

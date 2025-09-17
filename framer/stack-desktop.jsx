@@ -22,9 +22,9 @@
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-INOGGZPE.js";
-import "./chunks/chunk-DUXOTEEB.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { stdin_default } from "./chunks/layout-container.js";
+import "./chunks/ticker.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:stack-desktop
 import { Fragment } from "react";

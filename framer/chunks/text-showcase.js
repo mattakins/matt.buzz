@@ -9,7 +9,7 @@
 // Ticker component import
 import {
   Ticker
-} from "./chunk-DUXOTEEB.js";
+} from "./ticker.js";
 
 // Framer/React imports
 import { jsx as _jsx } from "react/jsx-runtime";

@@ -22,8 +22,8 @@
 }} Props
 
  */
-import { Time, className, css, fonts } from "./chunks/chunk-MGC5HSAG.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { Time, className, css, fonts } from "./chunks/time-date.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:position-time
 import { Fragment as Fragment2 } from "react";

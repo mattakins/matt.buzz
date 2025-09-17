@@ -5,10 +5,10 @@
 
 import {
   stdin_default as stdin_default2
-} from "./chunk-TEOP6HVR.js";
+} from "./header-box.js";
 import {
   stdin_default
-} from "./chunk-ERT25UFQ.js";
+} from "./stack-showcase.js";
 
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import {

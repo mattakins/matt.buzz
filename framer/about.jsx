@@ -22,12 +22,12 @@
 }} Props
 
  */
-import { Text_Reveal } from "./chunks/chunk-SZ6ZPBCQ.js";
-import { stdin_default as stdin_default2 } from "./chunks/chunk-G75EX6JD.js";
-import { stdin_default } from "./chunks/chunk-45I2KKOU.js";
-import "./chunks/chunk-NE2QVY4P.js";
-import "./chunks/chunk-DUXOTEEB.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { Text_Reveal } from "./chunks/text-reveal.js";
+import { stdin_default as stdin_default2 } from "./chunks/text-showcase.js";
+import { stdin_default } from "./chunks/experience.js";
+import "./chunks/dual-typography.js";
+import "./chunks/ticker.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:about
 import { Fragment as Fragment2 } from "react";

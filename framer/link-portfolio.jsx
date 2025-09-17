@@ -22,8 +22,8 @@
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-VT7XBIEH.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { stdin_default } from "./chunks/nav-link.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:link-portfolio
 import { Fragment } from "react";

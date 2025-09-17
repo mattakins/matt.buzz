@@ -1,6 +1,23 @@
-// Clean rewrite of chunk-JNGIXIAD.js
-// Theme Toggle Component with interactive states and smooth animations
-// Preserves exact Framer motion components and functionality
+/**
+ * Theme Toggle Component
+ *
+ * Interactive theme switcher with 6 states and smooth animations.
+ * Preserves exact Framer motion components and functionality.
+ *
+ * States:
+ * - TzgVzetvp: Desktop (default)
+ * - IFTxxXlL5: Hover 1
+ * - o3JNQH70g: Click 1
+ * - aexHCFV6M: Hover 2
+ * - aP0q0e5A5: Phone
+ * - Gwm03yRT0: Click 2
+ *
+ * Features:
+ * - Responsive design across breakpoints
+ * - Smooth spring transitions
+ * - State cycling through 6 variants
+ * - Theme persistence via Data store
+ */
 
 import React from 'react';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";

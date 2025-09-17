@@ -22,7 +22,7 @@
 }} Props
 
  */
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:theme-toggle
 import { Fragment as Fragment2 } from "react";

@@ -22,8 +22,8 @@
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-26WPYTWB.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { stdin_default } from "./chunks/theme-toggle.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:theme
 import { Fragment } from "react";

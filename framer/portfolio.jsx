@@ -22,10 +22,10 @@
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-SSZS7AYP.js";
-import { className, css, fonts } from "./chunks/chunk-TTWRYTTS.js";
-import "./chunks/chunk-NE2QVY4P.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { stdin_default } from "./chunks/portfolio-item.js";
+import { className, css, fonts } from "./chunks/hero-typography.js";
+import "./chunks/dual-typography.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:portfolio
 import { Fragment as Fragment2 } from "react";

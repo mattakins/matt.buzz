@@ -5,6 +5,17 @@ import './responsive.css';
 // Import router component
 import Router from './Router.jsx';
 
+/**
+ * Main application component that handles theme management and routing
+ *
+ * Features:
+ * - System preference detection for initial theme
+ * - Theme state synchronization with Framer components
+ * - MutationObserver for theme attribute changes
+ * - Responsive theme switching
+ *
+ * @returns {JSX.Element} Main app container with router
+ */
 export default function App() {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
 

@@ -10,7 +10,7 @@ import {
   className,
   css,
   fonts
-} from "./chunk-NB4Q2TMV.js";
+} from "./heading-typography.js";
 
 import {
   addFonts,

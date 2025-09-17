@@ -22,21 +22,21 @@
 }} Props
 
  */
-import { stdin_default as stdin_default2 } from "./chunks/chunk-CB5YAPNW.js";
-import "./chunks/chunk-MGC5HSAG.js";
-import "./chunks/chunk-JNGIXIAD.js";
+import { stdin_default as stdin_default2 } from "./chunks/main-navigation.js";
+import "./chunks/time-date.js";
+import "./chunks/theme-toggle.js";
 import {
 	className,
 	css,
 	fonts,
 	stdin_default,
-} from "./chunks/chunk-EFMHCGGP.js";
-import "./chunks/chunk-TEOP6HVR.js";
-import "./chunks/chunk-INOGGZPE.js";
-import "./chunks/chunk-ERT25UFQ.js";
-import "./chunks/chunk-DUXOTEEB.js";
-import "./chunks/chunk-V2U57ZQI.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+} from "./chunks/portfolio-layout.js";
+import "./chunks/header-box.js";
+import "./chunks/layout-container.js";
+import "./chunks/stack-showcase.js";
+import "./chunks/ticker.js";
+import "./chunks/shared-fonts.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:main
 import { Fragment as Fragment2 } from "react";

@@ -22,8 +22,8 @@
 }} Props
 
  */
-import { className, css, fonts } from "./chunks/chunk-V2U57ZQI.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { className, css, fonts } from "./chunks/shared-fonts.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:logo
 import { Fragment as Fragment2 } from "react";

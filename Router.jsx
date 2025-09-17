@@ -5,10 +5,24 @@ import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import MainFramerComponent from './framer/main.jsx';
 import PortfolioComponent from './framer/portfolio.jsx';
 import NavComponent from './framer/nav.jsx';
+import TestPage from './TestPage.jsx';
 
 // Import view transition utilities
 import { navigateWithReactRouter } from './utils/page-transitions.js';
 
+/**
+ * Navigation wrapper that handles click events for enhanced routing
+ *
+ * Features:
+ * - Intercepts internal link clicks for smooth navigation
+ * - Supports view transitions between pages
+ * - Handles Framer component navigation elements
+ * - Back button and logo navigation support
+ *
+ * @param {Object} props - Component props
+ * @param {React.ReactNode} props.children - Child components to wrap
+ * @returns {React.ReactNode} Children with navigation handling
+ */
 function NavigationWrapper({ children }) {
   const navigate = useNavigate();
 
@@ -94,6 +108,21 @@ function NavigationWrapper({ children }) {
   return children;
 }
 
+/**
+ * Main router component that defines application routes
+ *
+ * Routes:
+ * - "/" - Main portfolio page with responsive layout
+ * - "/test" - Test page for development
+ * - "/portfolio" - Portfolio showcase with navigation
+ *
+ * Features:
+ * - GitHub Pages routing support
+ * - Fixed navigation on portfolio page
+ * - Responsive components throughout
+ *
+ * @returns {JSX.Element} Router with defined routes
+ */
 export default function Router() {
   // Handle GitHub Pages routing
   const basename = process.env.NODE_ENV === 'production'
@@ -105,6 +134,7 @@ export default function Router() {
       <NavigationWrapper>
         <Routes>
           <Route path="/" element={<MainFramerComponent.Responsive />} />
+          <Route path="/test" element={<TestPage />} />
           <Route path="/portfolio" element={
             <div style={{
               width: '100vw',

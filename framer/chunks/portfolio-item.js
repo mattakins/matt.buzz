@@ -14,7 +14,7 @@ import {
   css2,
   fonts,
   fonts2
-} from "./chunk-NE2QVY4P.js";
+} from "./dual-typography.js";
 
 // Framer/React imports
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";

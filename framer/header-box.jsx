@@ -22,10 +22,10 @@
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-TEOP6HVR.js";
-import "./chunks/chunk-INOGGZPE.js";
-import "./chunks/chunk-DUXOTEEB.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { stdin_default } from "./chunks/header-box.js";
+import "./chunks/layout-container.js";
+import "./chunks/ticker.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:header-box
 import { Fragment } from "react";

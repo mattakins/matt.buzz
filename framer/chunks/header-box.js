@@ -9,7 +9,7 @@
 // Stack Desktop component import
 import {
   stdin_default
-} from "./chunk-INOGGZPE.js";
+} from "./layout-container.js";
 
 // Framer/React imports
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";

@@ -22,8 +22,8 @@
 }} Props
 
  */
-import { Text_Reveal } from "./chunks/chunk-SZ6ZPBCQ.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { Text_Reveal } from "./chunks/text-reveal.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:text-reveal
 import { Fragment } from "react";

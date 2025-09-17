@@ -26,13 +26,13 @@ import {
 	className as className2,
 	css as css2,
 	fonts as fonts2,
-} from "./chunks/chunk-TTWRYTTS.js";
-import { className, css, fonts } from "./chunks/chunk-GCG4FXA2.js";
-import { stdin_default } from "./chunks/chunk-YYMSPGWM.js";
-import "./chunks/chunk-NB4Q2TMV.js";
-import { stdin_default as stdin_default2 } from "./chunks/chunk-RGINIOWQ.js";
-import "./chunks/chunk-V2U57ZQI.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+} from "./chunks/hero-typography.js";
+import { className, css, fonts } from "./chunks/body-typography.js";
+import { stdin_default } from "./chunks/link-skew.js";
+import "./chunks/heading-typography.js";
+import { stdin_default as stdin_default2 } from "./chunks/form-button.js";
+import "./chunks/shared-fonts.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:contact
 import { Fragment as Fragment2 } from "react";

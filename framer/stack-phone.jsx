@@ -22,8 +22,8 @@
 }} Props
 
  */
-import { Ticker } from "./chunks/chunk-DUXOTEEB.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { Ticker } from "./chunks/ticker.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:stack-phone
 import { Fragment as Fragment2 } from "react";

@@ -10,7 +10,7 @@ import {
   className,
   css,
   fonts
-} from "./chunk-V2U57ZQI.js";
+} from "./shared-fonts.js";
 
 import {
   addFonts,

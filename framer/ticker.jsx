@@ -22,9 +22,9 @@
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-G75EX6JD.js";
-import "./chunks/chunk-DUXOTEEB.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { stdin_default } from "./chunks/text-showcase.js";
+import "./chunks/ticker.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:ticker
 import { Fragment } from "react";

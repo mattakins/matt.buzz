@@ -59,21 +59,7 @@ html, body {
   color: rgb(255, 255, 255) !important;
 }
 
-/* Default navigation styling for light mode */
-body:not(.dark) navigation,
-body:not(.dark) navigation *,
-body:not(.dark) nav,
-body:not(.dark) nav * {
-  color: rgb(0, 0, 0) !important;
-}
-
-/* Dark mode navigation styling */
-body.dark navigation,
-body.dark navigation *,
-body.dark nav,
-body.dark nav * {
-  color: rgb(255, 255, 255) !important;
-}
+/* Navigation styling handled by toggle-theme attributes above */
 
 
 
@@ -182,12 +168,99 @@ body::before {
   }
 }
 
+/* Unified Palm Tree Background Effect */
+/* Target the main content container that holds all tiles */
+.framer-1nw48ne {
+  position: relative;
+}
+
+/* Create unified background behind all tiles */
+.framer-1nw48ne::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://framerusercontent.com/images/WkhfKz1YJ2Y3ADVaM.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Create masked background for each tile to show different parts */
+.framer-CTg5A.framer-b3980a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://framerusercontent.com/images/WkhfKz1YJ2Y3ADVaM.jpg');
+  background-size: 1000px 800px; /* Large enough to cover all tiles */
+  background-repeat: no-repeat;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+/* Position the background differently for each tile */
+.framer-wgsb95-container .framer-CTg5A.framer-b3980a::after {
+  background-position: 0% 0%; /* Top-left tile */
+}
+
+.framer-1y7do4z-container .framer-CTg5A.framer-b3980a::after {
+  background-position: -350px 0%; /* Top-right area */
+}
+
+.framer-1t6v1ro-container .framer-CTg5A.framer-b3980a::after {
+  background-position: -700px 0%; /* Far right area */
+}
+
+.framer-vs50g9 .framer-CTg5A.framer-b3980a::after {
+  background-position: -350px -300px; /* Center area */
+}
+
+.framer-naoazj-container .framer-CTg5A.framer-b3980a::after {
+  background-position: 0% -300px; /* Bottom-left area */
+}
+
+/* Ensure tiles are positioned above the background */
+.framer-1nw48ne > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Completely remove individual tile background images */
+.framer-1dretve {
+  background: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+/* Also target the Image component that contains the background */
+.framer-CTg5A .framer-1dretve img,
+.framer-CTg5A .framer-1dretve picture,
+.framer-CTg5A .framer-1dretve [style*="background"] {
+  display: none !important;
+}
+
+/* Override any inline background styles on tile images */
+.framer-b3980a,
+.framer-CTg5A.framer-b3980a {
+  background: none !important;
+  background-image: none !important;
+}
+
 /* Container queries for more granular control */
 @container (min-width: 320px) {
   .app-container {
     container-type: inline-size;
   }
 }
+
+/* Unified background effect removed - tiles restored to original */
 
 /* View Transitions API for smooth page navigation */
 @view-transition {
@@ -216,6 +289,331 @@ body::before {
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Unified Palm Tree Background - Position Different Parts for Each Tile */
+.unified-tile-bg {
+  background-size: 1200px 600px !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Position background for each tile based on container classes */
+.framer-wgsb95-container .unified-tile-bg {
+  background-position: 0px 0px !important; /* Top-left tile */
+}
+
+.framer-1y7do4z-container .unified-tile-bg {
+  background-position: -400px 0px !important; /* Top-center tile */
+}
+
+.framer-1t6v1ro-container .unified-tile-bg {
+  background-position: -800px 0px !important; /* Top-right tile */
+}
+
+.framer-vs50g9 .unified-tile-bg {
+  background-position: -350px -300px !important; /* Avatar tile */
+}
+
+.framer-naoazj-container .unified-tile-bg {
+  background-position: 0px -300px !important; /* Bottom-left tile */
+}
+
+.framer-qtc6gu-container .unified-tile-bg {
+  background-position: -400px -300px !important; /* Bottom-right tile */
+}
+
+/* Clean Header Component Styles - Matches Original Design Exactly */
+.clean-header {
+  font-family: 'Open Sauce Sans', sans-serif;
+}
+
+.portfolio-grid {
+  position: relative;
+}
+
+/* Unified Palm Tree Background */
+.portfolio-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://framerusercontent.com/images/WkhfKz1YJ2Y3ADVaM.jpg');
+  background-size: 1200px 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 32px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Individual tile backgrounds showing different parts of the unified image */
+.grid-tile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://framerusercontent.com/images/WkhfKz1YJ2Y3ADVaM.jpg');
+  background-size: 1200px 600px;
+  background-repeat: no-repeat;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Position background for each tile to show different parts */
+.about-tile::before {
+  background-position: 0px 0px; /* Top-left */
+}
+
+.portfolio-tile::before {
+  background-position: -400px 0px; /* Top-center */
+}
+
+.contact-tile::before {
+  background-position: -800px 0px; /* Top-right */
+}
+
+.avatar-tile::before {
+  background-position: 0px -300px; /* Bottom-left */
+}
+
+.stack-tile::before {
+  background-position: -400px -300px; /* Bottom-center */
+}
+
+/* Hover effects */
+.grid-tile:hover {
+  transform: translateY(-4px);
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.grid-tile:hover .tile-arrow {
+  opacity: 1;
+  transform: translate(4px, -4px);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .portfolio-grid::before,
+  .grid-tile::before {
+    background-size: 400px 1000px;
+  }
+
+  .about-tile::before { background-position: 0px 0px; }
+  .portfolio-tile::before { background-position: 0px -200px; }
+  .contact-tile::before { background-position: 0px -400px; }
+  .avatar-tile::before { background-position: 0px -600px; }
+  .stack-tile::before { background-position: 0px -800px; }
+}
+
+/* Simplified Header Component Styles */
+.header-simple-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+}
+
+.header-title {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.header-title h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(135deg, #fff 0%, #999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.portfolio-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 300px 300px;
+  gap: 1rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.unified-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://framerusercontent.com/images/WkhfKz1YJ2Y3ADVaM.jpg');
+  background-size: 1200px 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+  z-index: 1;
+}
+
+.grid-item {
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.grid-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://framerusercontent.com/images/WkhfKz1YJ2Y3ADVaM.jpg');
+  background-size: 1200px 600px;
+  background-repeat: no-repeat;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.about {
+  grid-column: 1;
+  grid-row: 1;
+}
+.about::before {
+  background-position: 0px 0px;
+}
+
+.portfolio {
+  grid-column: 2;
+  grid-row: 1;
+}
+.portfolio::before {
+  background-position: -400px 0px;
+}
+
+.contact {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+.contact::before {
+  background-position: -800px 0px;
+}
+
+.avatar {
+  grid-column: 1;
+  grid-row: 2;
+  justify-content: center;
+  align-items: center;
+}
+.avatar::before {
+  background-position: 0px -300px;
+}
+
+.stack {
+  grid-column: 2;
+  grid-row: 2;
+}
+.stack::before {
+  background-position: -400px -300px;
+}
+
+.item-content {
+  position: relative;
+  z-index: 3;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.avatar .item-content {
+  justify-content: center;
+  align-items: center;
+}
+
+.item-content h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.arrow {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.grid-item:hover .arrow {
+  opacity: 1;
+  transform: translate(4px, -4px);
+}
+
+.avatar-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.avatar-photo::before {
+  content: '👋';
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 250px);
+  }
+
+  .about { grid-column: 1; grid-row: 1; }
+  .portfolio { grid-column: 1; grid-row: 2; }
+  .contact { grid-column: 1; grid-row: 3; }
+  .avatar { grid-column: 1; grid-row: 4; }
+  .stack { grid-column: 1; grid-row: 5; }
+
+  .unified-background,
+  .grid-item::before {
+    background-size: 400px 1000px;
+  }
+
+  .about::before { background-position: 0px 0px; }
+  .portfolio::before { background-position: 0px -200px; }
+  .contact::before { background-position: 0px -400px; }
+  .avatar::before { background-position: 0px -600px; }
+  .stack::before { background-position: 0px -800px; }
 }
 
 /* Focus and interaction improvements */

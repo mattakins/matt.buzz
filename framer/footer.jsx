@@ -22,8 +22,8 @@
 }} Props
 
  */
-import { className, css, fonts } from "./chunks/chunk-NB4Q2TMV.js";
-import { routes } from "./chunks/chunk-54YFTX6O.js";
+import { className, css, fonts } from "./chunks/heading-typography.js";
+import { routes } from "./chunks/routes.js";
 
 // virtual:footer
 import { Fragment as Fragment3 } from "react";
