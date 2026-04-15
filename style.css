@@ -181,6 +181,7 @@ body::before {
   font-weight: 700;
   letter-spacing: -0.02em;
   white-space: nowrap;
+  color: #6366f1;
 }
 
 .profile__title {
@@ -386,7 +387,7 @@ body::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.9);
-  background: white;
+  background: var(--card-bg);
   padding: 24px 32px;
   border-radius: var(--radius);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
