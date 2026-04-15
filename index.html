@@ -38,20 +38,15 @@
     <div class="topbar">
       <div class="topbar__location">
         <div class="topbar__location-inner">
-          <span>Vancouver, WA</span>
-          <span class="topbar__dot">•</span>
-          <span id="time">--:-- --</span>
-          <span class="topbar__dot">•</span>
-          <span id="weatherIcon"></span>
-          <span id="weatherText"></span>
-          <span class="topbar__dot">•</span>
-          <span>Vancouver, WA</span>
-          <span class="topbar__dot">•</span>
-          <span id="time2">--:-- --</span>
-          <span class="topbar__dot">•</span>
-          <span id="weatherIcon2"></span>
-          <span id="weatherText2"></span>
-          <span class="topbar__dot">•</span>
+          <span class="marquee-segment">
+            <span>Vancouver, WA</span>
+            <span class="topbar__dot">•</span>
+            <span class="marquee-time">--:-- --</span>
+            <span class="topbar__dot">•</span>
+            <span class="marquee-weather-icon"></span>
+            <span class="marquee-weather-text"></span>
+            <span class="topbar__dot">•</span>
+          </span>
         </div>
       </div>
       <button class="topbar__theme" id="themeToggle" aria-label="Toggle theme">
@@ -143,6 +138,7 @@
     initTheme();
     initWeather();
     initTime();
+    setupMarquee();
   </script>
 </body>
 </html>

@@ -76,8 +76,14 @@ body::before {
 .topbar__location-inner {
   display: flex;
   align-items: center;
+  animation: marquee 60s linear infinite;
+}
+
+.marquee-segment {
+  display: flex;
+  align-items: center;
   gap: 6px;
-  animation: marquee 15s linear infinite;
+  flex-shrink: 0;
 }
 
 @keyframes marquee {

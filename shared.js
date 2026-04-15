@@ -98,15 +98,12 @@ function initTheme() {
 
 // Weather display
 function setWeatherDisplay(icon, text) {
-  const el1 = document.getElementById('weatherIcon');
-  const el2 = document.getElementById('weatherText');
-  const el3 = document.getElementById('weatherIcon2');
-  const el4 = document.getElementById('weatherText2');
-
-  if (el1) el1.innerHTML = weatherIcons[icon] || '';
-  if (el2) el2.textContent = text;
-  if (el3) el3.innerHTML = weatherIcons[icon] || '';
-  if (el4) el4.textContent = text;
+  document.querySelectorAll('.marquee-weather-icon').forEach(el => {
+    el.innerHTML = weatherIcons[icon] || '';
+  });
+  document.querySelectorAll('.marquee-weather-text').forEach(el => {
+    el.textContent = text;
+  });
 }
 
 function initWeather() {
@@ -146,11 +143,9 @@ function updateTime() {
   const [hour, min] = hourMin.split(':');
   const colon = colonVisible ? ':' : '<span style="opacity:0">:</span>';
 
-  const el1 = document.getElementById('time');
-  const el2 = document.getElementById('time2');
-
-  if (el1) el1.innerHTML = `${hour}${colon}${min} ${ampm}`;
-  if (el2) el2.innerHTML = `${hour}${colon}${min} ${ampm}`;
+  document.querySelectorAll('.marquee-time').forEach(el => {
+    el.innerHTML = `${hour}${colon}${min} ${ampm}`;
+  });
 }
 
 function initTime() {
@@ -159,4 +154,43 @@ function initTime() {
     colonVisible = !colonVisible;
     updateTime();
   }, 500);
+}
+
+// Clone marquee segments to fill viewport
+function initMarquee() {
+  const inner = document.querySelector('.topbar__location-inner');
+  const segment = document.querySelector('.marquee-segment');
+  if (!inner || !segment) return;
+
+  // Clear existing clones (keep original)
+  const clones = inner.querySelectorAll('.marquee-segment-clone');
+  clones.forEach(c => c.remove());
+
+  // Calculate how many copies needed to fill 2x viewport width
+  const segmentWidth = segment.offsetWidth;
+  const viewportWidth = window.innerWidth;
+  const copiesNeeded = Math.ceil((viewportWidth * 2) / segmentWidth) + 1;
+
+  // Clone segments
+  for (let i = 0; i < copiesNeeded; i++) {
+    const clone = segment.cloneNode(true);
+    clone.classList.add('marquee-segment-clone');
+    inner.appendChild(clone);
+  }
+
+  // Set animation duration based on content width (constant speed: ~25px/sec - original feel)
+  const totalWidth = inner.scrollWidth;
+  const pixelsPerSecond = 25;
+  const duration = totalWidth / 2 / pixelsPerSecond;
+  inner.style.animationDuration = `${duration}s`;
+}
+
+// Initialize marquee on load and resize
+function setupMarquee() {
+  initMarquee();
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initMarquee, 200);
+  });
 }
