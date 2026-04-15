@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f5f5f4;
+  --card-bg: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --radius: 20px;
+  --radius-sm: 12px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Profile Header */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+  margin-bottom: 24px;
+}
+
+.profile__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile__info {
+  flex: 1;
+}
+
+.profile__name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.profile__bio {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.profile__contact {
+  padding: 10px 20px;
+  background: var(--text);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.profile__contact:hover {
+  opacity: 0.8;
+}
+
+/* Bento Grid - Split Layout */
+.bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.bento__left {
+  display: flex;
+}
+
+.bento__left .card {
+  flex: 1;
+}
+
+.bento__right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 120px;
+  gap: 12px;
+}
+
+/* Card Base */
+.card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Sizes */
+.card--tall {
+  grid-row: span 2;
+}
+
+.card--wide {
+  grid-column: span 2;
+}
+
+.card--small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Hero card (family photo) - no hover effect */
+.card--hero {
+  cursor: default;
+}
+
+.card--hero:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+}
+
+/* Card Image */
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Overlay */
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: white;
+}
+
+.card__label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.card__desc {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* Card Icon (for social links) */
+.card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card__icon svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+/* Colored card backgrounds */
+.card--linkedin {
+  background: #0077b5;
+}
+
+.card--twitter {
+  background: #000000;
+}
+
+.card--about {
+  background: #f97316;
+}
+
+.card--portfolio {
+  background: #8b5cf6;
+}
+
+.card--stack {
+  background: #06b6d4;
+}
+
+.card--resume {
+  background: #10b981;
+}
+
+.card--email {
+  background: #ec4899;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: white;
+  padding: 24px 32px;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.modal--show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal__email {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.modal__message {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  body {
+    padding: 16px;
+  }
+
+  .profile {
+    flex-wrap: wrap;
+  }
+
+  .profile__contact {
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .bento {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .bento__left {
+    height: 280px;
+  }
+
+  .bento__left .card__image {
+    object-position: center;
+  }
+
+  .bento__right {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
+  }
+}
