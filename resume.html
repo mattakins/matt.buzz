@@ -46,10 +46,16 @@
 
     .resume__header {
       display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .resume__header-top {
+      display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 32px;
     }
 
     .resume__title {
@@ -63,6 +69,14 @@
       font-size: 1rem;
       color: var(--text-muted);
       margin-top: 4px;
+    }
+
+    .resume__headshot {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
     }
 
     .resume__download {
@@ -221,9 +235,8 @@
         padding: 12px 0 24px;
       }
 
-      .resume__header {
-        flex-direction: column;
-        align-items: flex-start;
+      .resume__header-top {
+        flex-direction: row;
       }
 
       .resume__title {
@@ -268,9 +281,12 @@
 
     <section class="resume">
       <div class="resume__header">
-        <div class="resume__header-text">
-          <h1 class="resume__title">Matt Akins</h1>
-          <p class="resume__subtitle">DTC Growth Leader & Full-Stack Shopify Developer</p>
+        <div class="resume__header-top">
+          <div class="resume__header-text">
+            <h1 class="resume__title">Matt Akins</h1>
+            <p class="resume__subtitle">DTC Growth Leader &<br>Full-Stack Shopify Developer</p>
+          </div>
+          <img src="assets/headshot.jpg" alt="Matt Akins" class="resume__headshot">
         </div>
         <a href="assets/Matt%20Akins%20-%20Resume.pdf" download class="resume__download">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

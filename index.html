@@ -37,6 +37,67 @@
     @keyframes slide-in {
       from { transform: translateX(-30%); opacity: 0; }
     }
+
+    /* Highlighter effect */
+    .highlight {
+      margin: 0 -0.4em;
+      padding: 0.1em 0.4em;
+      border-radius: 0.8em 0.3em;
+      background: transparent;
+      background-size: 0% 100%;
+      background-repeat: no-repeat;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      animation: highlight-in 0.6s ease-out forwards;
+      color: var(--text-muted);
+      transition: none;
+    }
+    .highlight--purple {
+      background-image: linear-gradient(to right, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.5) 4%, rgba(99, 102, 241, 0.25));
+      animation-delay: 0.3s;
+      animation-name: highlight-in, highlight-text;
+    }
+    .highlight--blue {
+      background-image: linear-gradient(to right, rgba(0, 129, 251, 0.1), rgba(0, 129, 251, 0.5) 4%, rgba(0, 129, 251, 0.25));
+      animation-delay: 0.5s;
+      animation-name: highlight-in, highlight-text;
+    }
+    .highlight--green {
+      background-image: linear-gradient(to right, rgba(149, 191, 71, 0.1), rgba(149, 191, 71, 0.5) 4%, rgba(149, 191, 71, 0.25));
+      animation-delay: 0.7s;
+      animation-name: highlight-in, highlight-text;
+    }
+    @keyframes highlight-in {
+      from { background-size: 0% 100%; }
+      to { background-size: 100% 100%; }
+    }
+    @keyframes highlight-text {
+      from { color: var(--text-muted); }
+      to { color: black; }
+    }
+    [data-theme="dark"] .highlight {
+      animation-name: highlight-in, highlight-text-dark;
+    }
+    @keyframes highlight-text-dark {
+      from { color: var(--text-muted); }
+      to { color: white; }
+    }
+    /* Dark mode: stronger highlights */
+    [data-theme="dark"] .highlight--purple {
+      background-image: linear-gradient(to right, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.7) 4%, rgba(99, 102, 241, 0.45));
+    }
+    [data-theme="dark"] .highlight--blue {
+      background-image: linear-gradient(to right, rgba(0, 129, 251, 0.3), rgba(0, 129, 251, 0.7) 4%, rgba(0, 129, 251, 0.45));
+    }
+    [data-theme="dark"] .highlight--green {
+      background-image: linear-gradient(to right, rgba(149, 191, 71, 0.3), rgba(149, 191, 71, 0.7) 4%, rgba(149, 191, 71, 0.45));
+    }
+    .profile__experience {
+      font-size: 1.0rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
   </style>
 </head>
 <body>
@@ -76,7 +137,8 @@
         <header class="profile">
           <h1 class="profile__name">Matt Akins</h1>
           <h2 class="profile__title">DTC Growth Leader &<br>Full-Stack Shopify Developer 👨‍💻</h2>
-          <p class="profile__bio">12 years of experience. I build marketing teams, Meta ad campaigns, and Shopify stores that scale.</p>
+          <h3 class="profile__experience">12 years of experience.</h3>
+          <p class="profile__bio">I build <mark class="highlight highlight--purple">marketing teams</mark>, <mark class="highlight highlight--blue">Meta ad campaigns</mark>, and <mark class="highlight highlight--green">Shopify stores</mark> that scale.</p>
         </header>
 
         <div class="bento__cards">
