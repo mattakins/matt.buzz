@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     @view-transition {
       navigation: auto;
@@ -94,7 +94,7 @@
     }
     .profile__experience {
       font-size: 1.0rem;
-      font-weight: 500;
+      font-weight: 400;
       color: var(--text-muted);
       margin-bottom: 4px;
     }
@@ -135,10 +135,14 @@
       <!-- Right: Profile + Cards -->
       <div class="bento__right">
         <header class="profile">
-          <h1 class="profile__name">Matt Akins</h1>
-          <h2 class="profile__title">DTC Growth<br><span class="profile__services">Meta Ads · Shopify Development · AI Automation</span></h2>
-          <h3 class="profile__experience">12 years of experience.</h3>
-          <p class="profile__bio">I build <mark class="highlight highlight--purple">marketing funnels</mark>, scale <mark class="highlight highlight--blue">Meta ads</mark>, and develop <mark class="highlight highlight--green">Shopify stores</mark> that convert.</p>
+          <h1 class="profile__name">Matt Akins <span class="profile__dtc">/ DTC Growth</span></h1>
+          <div class="profile__services">
+            <span class="service-line">Meta Ads</span>
+            <span class="service-line">Shopify Development</span>
+            <span class="service-line">AI Automation</span>
+          </div>
+          <!-- <h3 class="profile__experience">12 years of experience</h3> -->
+          <p class="profile__bio">I build <mark class="highlight highlight--purple">marketing systems</mark>, scale <mark class="highlight highlight--blue">Meta ads</mark>, and develop <mark class="highlight highlight--green">Shopify stores</mark> that convert.</p>
         </header>
 
         <div class="bento__cards">
