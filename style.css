@@ -200,6 +200,12 @@ body::before {
   color: var(--text-muted);
 }
 
+.profile__services {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
 .profile__bio {
   flex: 1;
   font-size: 0.95rem;
