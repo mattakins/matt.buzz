@@ -239,9 +239,14 @@ body::before {
 	font-size: min(2.4rem, 10cqi);
 	font-weight: 250;
 	letter-spacing: -0.01em;
-	line-height: 1.05;
+	line-height: 1.07;
 	color: var(--text-muted);
 	white-space: nowrap;
+}
+
+.service-line .highlight {
+	margin-left: -0.38em;
+	padding-left: 0.38em;
 }
 
 
