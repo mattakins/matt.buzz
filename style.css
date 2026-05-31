@@ -212,7 +212,7 @@ body::before {
 }
 
 .profile__name {
-	font-size: min(2rem, 8.6cqi);
+	font-size: min(2.25rem, 10.6cqi);
 	font-weight: 700;
 	line-height: 1.05;
 	letter-spacing: -0.02em;
