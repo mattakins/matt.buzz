@@ -248,8 +248,10 @@ body::before {
 
 
 .service-line .highlight {
-	margin-left: -0.38em;
-	padding-left: 0.38em;
+	margin-left: -0.22em;
+	margin-right: -0.4em;
+	padding-left: 0.28em;
+	padding-right: 0.4em;
 }
 
 
